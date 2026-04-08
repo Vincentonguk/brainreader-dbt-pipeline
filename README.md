@@ -1,15 +1,14 @@
-Welcome to your new dbt project!
+# Brainreader dbt Pipeline 🧠
 
-### Using the starter project
+## 🚀 Orchestration Agent
+- **Agent:** dbt Cloud Managed
+- **Visibility:** Private (Secure)
+- **Status:** Testing Orchestration Flow
 
-Try running the following commands:
-- dbt run
-- dbt test
+## 🛠 Project Components
+* **Models**: Business logic and transformations.
+* **Seeds**: Static lookup data.
+* **Tests**: Data quality checks.
 
-
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+---
+*Last Movement: April 2026*

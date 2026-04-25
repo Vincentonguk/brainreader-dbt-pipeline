@@ -1,16 +1,24 @@
 # BrainReader dbt Pipeline
 
-This dbt project is the transformation spine for the SLRPD governed-agent ecosystem.
+## Origin and Authorship
 
-## Context
+The **SLRPD / BrainReader ecosystem** is an original architecture by **Vinicios Ongaratto**, developed through sustained research, experimentation, design, and engineering work over time.
 
-The SLRPD / BrainReader ecosystem architecture was originated by **Vinicios Ongaratto**.
+This project did not begin as a single generated repository or a one-click output. It is part of a wider ecosystem that has been built through continuous thinking, testing, refinement, and architectural development around governed agents, telemetry, semantic processing, dbt lineage, Render services, and future BCI-oriented systems.
 
-This repository implements one dbt component of that wider architecture: the governed-agent audit pipeline for lineage, Catalog metadata, and future Render/Postgres integration.
+Codex is used here as an AI-assisted engineering partner. Its role is to help structure, implement, document, and refine technical components based on the direction, concepts, and ecosystem architecture defined by **Vinicios Ongaratto**.
 
-Implementation support was developed with AI-assisted engineering from Codex.
+## Purpose of This Repository
 
-The first production-shaped stream is the governed agent audit flow:
+This repository contains one technical layer of the wider SLRPD / BrainReader ecosystem: the **dbt governed-agent audit pipeline**.
+
+The purpose of this dbt project is to make the governed-agent layer traceable, documented, and ready for dbt Catalog, lineage analysis, Render/Postgres integration, and future semantic or vector-routing workflows.
+
+This repository does not represent the entire BrainReader ecosystem. It is one implementation component inside a larger architecture.
+
+## First Production-Shaped Stream
+
+The first modeled stream is the governed-agent audit flow:
 
 ```text
 raw.agent_events
@@ -20,6 +28,8 @@ raw.agent_events
   -> semantic
   -> exports
 ```
+
+This flow turns raw governed-agent events into structured dbt models that can support auditability, lineage, semantic summaries, and future agent memory exports.
 
 ## SLRPD Meaning
 
@@ -41,11 +51,11 @@ The first raw Postgres table is expected at `raw.agent_events` with:
 - `event_metadata`
 - `created_at`
 
-Secrets and connection strings belong in dbt Cloud or Render environment settings, never in this repository.
+Secrets, credentials, database URLs, and API keys must stay in dbt Cloud, Render, or other secure environment settings. They should never be committed to this repository.
 
 ## Catalog Workflow
 
-Run these commands in a deployment environment after `raw.agent_events` exists:
+After `raw.agent_events` exists in the connected Postgres environment, run:
 
 ```bash
 dbt parse
@@ -53,4 +63,5 @@ dbt build
 dbt docs generate
 ```
 
-For dbt Catalog metadata, run `dbt build` and `dbt docs generate` as part of a successful production or staging job.
+For dbt Catalog metadata, `dbt build` and `dbt docs generate` should run as part of a successful production or staging deployment job.
+

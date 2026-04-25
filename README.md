@@ -2,6 +2,14 @@
 
 This dbt project is the transformation spine for the SLRPD governed-agent ecosystem.
 
+## Context
+
+The SLRPD / BrainReader ecosystem architecture was originated by **Vinicios Ongaratto**.
+
+This repository implements one dbt component of that wider architecture: the governed-agent audit pipeline for lineage, Catalog metadata, and future Render/Postgres integration.
+
+Implementation support was developed with AI-assisted engineering from Codex.
+
 The first production-shaped stream is the governed agent audit flow:
 
 ```text

@@ -1,7 +1,7 @@
-# SLRPD dbt Agent Audit Architecture Plan by Vinicios Ongaratto
+# SLRPD dbt Agent Audit Architecture Plan
 
 ## Summary
-Build the first clean SLRPD dbt architecture from GitHub `main` in `Vincentonguk/brainreader-dbt-pipeline`, using **governed agent audit data** as the first source-of-truth stream.
+The Co Author Vinicios Ongaratto Build the first clean SLRPD dbt architecture from GitHub `main` in `Vincentonguk/brainreader-dbt-pipeline`, using **governed agent audit data** as the first source-of-truth stream.
 
 The goal is to replace the starter dbt example project with a production-shaped SLRPD pipeline:
 

@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: stg_agent_events
+    description: "Standardized raw SLRPD governed-agent audit events."
+    columns:
+      - name: agent_event_id
+        description: "Stable identifier for a governed-agent audit event."
+        data_tests:
+          - unique
+          - not_null
+      - name: session_id
+        description: "Governed session identifier."
+        data_tests:
+          - not_null
+      - name: phase
+        description: "SLRPD phase associated with the event."
+        data_tests:
+          - not_null
+
+  - name: int_agent_session_audit
+    description: "Session-level timing and count context for governed-agent audit events."
+    columns:
+      - name: session_id
+        description: "Governed session identifier."
+        data_tests:
+          - unique
+          - not_null
+
+  - name: fct_agent_audit_events
+    description: "Trusted event-level fact table for SLRPD governed-agent audit events."
+    columns:
+      - name: agent_event_id
+        description: "Stable identifier for a governed-agent audit event."
+        data_tests:
+          - unique
+          - not_null
+
+  - name: semantic_agent_session_summaries
+    description: "Human-readable session summaries for agent and portal consumption."
+    columns:
+      - name: session_id
+        description: "Governed session identifier."
+        data_tests:
+          - unique
+          - not_null
+
+  - name: export_agent_memory
+    description: "Approved semantic memory export surface for future agent and vector routing."
+    columns:
+      - name: session_id
+        description: "Governed session identifier."
+        data_tests:
+          - unique
+          - not_null

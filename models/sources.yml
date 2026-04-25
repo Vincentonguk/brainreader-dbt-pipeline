@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: raw_slrpd
+    description: "Raw SLRPD governed-agent records stored in Postgres."
+    schema: raw
+    tables:
+      - name: agent_events
+        description: "Append-only audit stream emitted by the SLRPD governed agent."
+        columns:
+          - name: agent_event_id
+            description: "Stable identifier for a governed-agent audit event."
+            data_tests:
+              - unique
+              - not_null
+          - name: session_id
+            description: "Identifier for the governed session that produced the event."
+            data_tests:
+              - not_null
+          - name: agent_name
+            description: "Name of the agent or component that emitted the event."
+            data_tests:
+              - not_null
+          - name: phase
+            description: "SLRPD phase associated with the event."
+            data_tests:
+              - not_null
+          - name: event_message
+            description: "Human-readable audit message."
+          - name: event_metadata
+            description: "JSON metadata captured with the event."
+          - name: created_at
+            description: "Timestamp when the audit event was created."
+            data_tests:
+              - not_null
+

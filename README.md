@@ -69,7 +69,7 @@ Expected result:
 - Starter example model tests are gone.
 - SLRPD audit models build successfully once `raw.agent_events` exists in Postgres.
 - dbt Catalog can show lineage after a successful deployment job.
-
+https://www.youtube.com/watch?v=Njm6fMnZOhI
 ## Assumptions
 - GitHub `main` is the implementation base.
 - Current uncommitted dbt Studio branch changes are not the source of truth.

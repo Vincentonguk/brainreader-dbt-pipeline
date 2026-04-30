@@ -76,3 +76,8 @@ https://www.youtube.com/watch?v=Njm6fMnZOhI
 - The first architecture pass focuses on governed agent audit data, not BrainReader telemetry.
 - The raw Postgres table does not need to exist before code structure is committed, but it must exist before `dbt build` succeeds against the real warehouse.
 - Secrets such as `DATABASE_URL` stay in Render/dbt environment settings, never in repo files.
+BrainReader Pipeline = captura + organização + interpretação + validação governada
+SLRPD = recebe + valida + bloqueia/autoriza/retorna
+Execução = fora do escopo principal, separada e controlada por responsáveis técnicos/éticos
+
+- "A BrainReader Pipeline não é uma camada de execução, mas uma infraestrutura governada para capturar, organizar, interpretar e validar eventos humano-máquina, mantendo abertura para futuras integrações computacionais dentro de limites técnicos, éticos e seguros".
